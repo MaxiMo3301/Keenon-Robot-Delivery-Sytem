@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "b7f7971a-244b-41d1-98ec-c93d70be2073",
+		"name": "Caine Hill Lift API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28847039"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.50.10:54321/health",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"50",
+						"10"
+					],
+					"port": "54321",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel Boarding",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"unitNumber\": {{unit}},\r\n    \"carNumber\": {{car}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.50.10:54321/cancelBoarding",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"50",
+						"10"
+					],
+					"port": "54321",
+					"path": [
+						"cancelBoarding"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Complete Boarding",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"unitNumber\": {{unit}},\r\n    \"carNumber\": {{car}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.50.10:54321/completeBoarding",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"50",
+						"10"
+					],
+					"port": "54321",
+					"path": [
+						"completeBoarding"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel Getting Off",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"unitNumber\": {{unit}},\r\n    \"carNumber\": {{car}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.50.10:54321/cancelGettingOff",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"50",
+						"10"
+					],
+					"port": "54321",
+					"path": [
+						"cancelGettingOff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Complete Getting Off",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"unitNumber\": {{unit}},\r\n    \"carNumber\": {{car}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.50.10:54321/completeGettingOff",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"50",
+						"10"
+					],
+					"port": "54321",
+					"path": [
+						"completeGettingOff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unlock Floor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.50.10:54321/unlockFloor/:floor",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"50",
+						"10"
+					],
+					"port": "54321",
+					"path": [
+						"unlockFloor",
+						":floor"
+					],
+					"variable": [
+						{
+							"key": "floor",
+							"value": "{{floor}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Register Robot Call",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"unitNumber\": {{unit}},\r\n    \"carNumber\": {{car}},\r\n    \"boardingFloor\": 1 ,\r\n    \"destinationFloor\": 1,\r\n    \"boardingDoorPosition\": {{boarding}},\r\n    \"destinationDoorPosition\": {{destination}}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://192.168.50.10:54321/registerRobotCall",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"50",
+						"10"
+					],
+					"port": "54321",
+					"path": [
+						"registerRobotCall"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stream the latest operation data of a specific car",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.50.10:54321/carOperationDataStream/:carNumber",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"50",
+						"10"
+					],
+					"port": "54321",
+					"path": [
+						"carOperationDataStream",
+						":carNumber"
+					],
+					"variable": [
+						{
+							"key": "carNumber",
+							"value": "{{car}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Stream the latest operation data of all cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.50.10:54321/carOperationDataStream",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"50",
+						"10"
+					],
+					"port": "54321",
+					"path": [
+						"carOperationDataStream"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the latest operation data of a specific car",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.50.10:54321/carOperationData/:carNumber",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"50",
+						"10"
+					],
+					"port": "54321",
+					"path": [
+						"carOperationData",
+						":carNumber"
+					],
+					"variable": [
+						{
+							"key": "carNumber",
+							"value": "{{car}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get the latest operation data for all cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.50.10:54321/carOperationData",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"50",
+						"10"
+					],
+					"port": "54321",
+					"path": [
+						"carOperationData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reload System",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://192.168.50.10:54321/reload",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"50",
+						"10"
+					],
+					"port": "54321",
+					"path": [
+						"reload"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "unit\n",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "car",
+			"value": "1",
+			"type": "string"
+		},
+		{
+			"key": "boarding",
+			"value": "Front",
+			"type": "string"
+		},
+		{
+			"key": "destination",
+			"value": "Front",
+			"type": "string"
+		},
+		{
+			"key": "floor",
+			"value": "0",
+			"type": "string"
+		}
+	]
+}
